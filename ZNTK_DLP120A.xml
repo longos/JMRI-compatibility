@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../XSLT/decoder.xsl"?>
+<!-- Copyright (C) JMRI 2003, 2005, 2007 All rights reserved -->
+<!-- $Id$ -->
+<!--                                                                        -->
+<!-- JMRI is free software; you can redistribute it and/or modify it under  -->
+<!-- the terms of version 2 of the GNU General Public License as published  -->
+<!-- by the Free Software Foundation. See the "COPYING" file for a copy     -->
+<!-- of this license.                                                       -->
+<!--                                                                        -->
+<!-- JMRI is distributed in the hope that it will be useful, but WITHOUT    -->
+<!-- ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or  -->
+<!-- FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License  -->
+<!-- for more details.                                                      -->
+<decoder-config xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://jmri.org/xml/schema/decoder.xsd">  
+  <version author="tomasz.drzymala@gmail.com" version="1" lastUpdated="20181230"/>
+  <decoder>
+    <family name="Light Decoders" mfg="ZNTK" lowVersionID="0" highVersionID="0">
+      <model model="DLP120A" numOuts="6" numFns="6">
+      </model>
+    </family>
+    <!--<programming direct="byteOnly" paged="yes" register="yes" ops="yes"/>-->
+	<programming direct="byteOnly" />
+    <variables>
+		<xi:include href="http://jmri.org/xml/decoders/nmra/mfgVersionId.xml"/>
+		
+		<variable CV="1" item="Primary Address" default="03">
+		<decVal min="1" max="127"/>
+		<label>Short Address</label>
+		<comment>NMRA standard form</comment>
+		</variable>
+		
+		<variable CV="47" item="Country code" readOnly="yes">
+			<decVal/>
+			<label>Country code: </label>
+		</variable>
+		<variable CV="48" item="Developer code" readOnly="yes">
+			<decVal/>
+			<label>Developer code: </label>
+		</variable>
+		<variable CV="49" item="Product ID1" readOnly="yes">
+			<decVal/>
+			<label>Product ID1: </label>
+		</variable>
+		<variable CV="50" item="Product ID2" readOnly="yes">
+			<decVal/>
+			<label>Product ID2: </label>
+		</variable>
+		
+		<variable CV="35" item="F1 output definition" default="01">
+		<decVal min="1" max="63"/>
+		<label>F1 output definition</label>
+		<comment>NMRA standard form</comment>
+		</variable>
+		<variable item="F1 controls output 1" CV="35" mask="XXXXXXXV" minOut="1">
+			<xi:include href="http://jmri.org/xml/decoders/parts/enum-NoYes.xml"/>
+			<label>F1 controls output 1</label>
+		</variable>
+		<variable item="F1 controls output 2" CV="35" mask="XXXXXXVX" minOut="2">
+			<xi:include href="http://jmri.org/xml/decoders/parts/enum-NoYes.xml"/>
+			<label>F1 controls output 2</label>
+		</variable>
+		<variable item="F1 controls output 3" CV="35" mask="XXXXXVXX" minOut="3">
+			<xi:include href="http://jmri.org/xml/decoders/parts/enum-NoYes.xml"/>
+			<label>F1 controls output 3</label>
+		</variable>
+		<variable item="F1 controls output 4" CV="35" mask="XXXXVXXX" minOut="4">
+			<xi:include href="http://jmri.org/xml/decoders/parts/enum-NoYes.xml"/>
+			<label>F1 controls output 4</label>
+		</variable>
+		<variable item="F1 controls output 5" CV="35" mask="XXXVXXXX" minOut="5">
+			<xi:include href="http://jmri.org/xml/decoders/parts/enum-NoYes.xml"/>
+			<label>F1 controls output 5</label>
+		</variable>
+		<variable item="F1 controls output 6" CV="35" mask="XXVXXXXX" minOut="6">
+			<xi:include href="http://jmri.org/xml/decoders/parts/enum-NoYes.xml"/>
+			<label>F1 controls output 6</label>
+		</variable>
+		
+		<variable item="F2 controls output 1" CV="36" mask="XXXXXXXV" minOut="1">
+			<xi:include href="http://jmri.org/xml/decoders/parts/enum-NoYes.xml"/>
+			<label>F2 controls output 1</label>
+		</variable>
+		<variable item="F2 controls output 2" CV="36" mask="XXXXXXVX" minOut="2">
+			<xi:include href="http://jmri.org/xml/decoders/parts/enum-NoYes.xml"/>
+			<label>F2 controls output 2</label>
+		</variable>
+		<variable item="F2 controls output 3" CV="36" mask="XXXXXVXX" minOut="3">
+			<xi:include href="http://jmri.org/xml/decoders/parts/enum-NoYes.xml"/>
+			<label>F2 controls output 3</label>
+		</variable>
+		<variable item="F2 controls output 4" CV="36" mask="XXXXVXXX" minOut="4">
+			<xi:include href="http://jmri.org/xml/decoders/parts/enum-NoYes.xml"/>
+			<label>F2 controls output 4</label>
+		</variable>
+		<variable item="F2 controls output 5" CV="36" mask="XXXVXXXX" minOut="5">
+			<xi:include href="http://jmri.org/xml/decoders/parts/enum-NoYes.xml"/>
+			<label>F2 controls output 5</label>
+		</variable>
+		<variable item="F2 controls output 6" CV="36" mask="XXVXXXXX" minOut="6">
+			<xi:include href="http://jmri.org/xml/decoders/parts/enum-NoYes.xml"/>
+			<label>F2 controls output 6</label>
+		</variable>
+		
+		<variable item="F3 controls output 1" CV="37" mask="XXXXXXXV" minOut="1">
+			<xi:include href="http://jmri.org/xml/decoders/parts/enum-NoYes.xml"/>
+			<label>F3 controls output 1</label>
+		</variable>
+		<variable item="F3 controls output 2" CV="37" mask="XXXXXXVX" minOut="2">
+			<xi:include href="http://jmri.org/xml/decoders/parts/enum-NoYes.xml"/>
+			<label>F3 controls output 2</label>
+		</variable>
+		<variable item="F3 controls output 3" CV="37" mask="XXXXXVXX" minOut="3">
+			<xi:include href="http://jmri.org/xml/decoders/parts/enum-NoYes.xml"/>
+			<label>F3 controls output 3</label>
+		</variable>
+		<variable item="F3 controls output 4" CV="37" mask="XXXXVXXX" minOut="4">
+			<xi:include href="http://jmri.org/xml/decoders/parts/enum-NoYes.xml"/>
+			<label>F3 controls output 4</label>
+		</variable>
+		<variable item="F3 controls output 5" CV="37" mask="XXXVXXXX" minOut="5">
+			<xi:include href="http://jmri.org/xml/decoders/parts/enum-NoYes.xml"/>
+			<label>F3 controls output 5</label>
+		</variable>
+		<variable item="F3 controls output 6" CV="37" mask="XXVXXXXX" minOut="6">
+			<xi:include href="http://jmri.org/xml/decoders/parts/enum-NoYes.xml"/>
+			<label>F3 controls output 6</label>
+		</variable>
+		
+		<variable item="F4 controls output 1" CV="38" mask="XXXXXXXV" minOut="1">
+			<xi:include href="http://jmri.org/xml/decoders/parts/enum-NoYes.xml"/>
+			<label>F4 controls output 1</label>
+		</variable>
+		<variable item="F4 controls output 2" CV="38" mask="XXXXXXVX" minOut="2">
+			<xi:include href="http://jmri.org/xml/decoders/parts/enum-NoYes.xml"/>
+			<label>F4 controls output 2</label>
+		</variable>
+		<variable item="F4 controls output 3" CV="38" mask="XXXXXVXX" minOut="3">
+			<xi:include href="http://jmri.org/xml/decoders/parts/enum-NoYes.xml"/>
+			<label>F4 controls output 3</label>
+		</variable>
+		<variable item="F4 controls output 4" CV="38" mask="XXXXVXXX" minOut="4">
+			<xi:include href="http://jmri.org/xml/decoders/parts/enum-NoYes.xml"/>
+			<label>F4 controls output 4</label>
+		</variable>
+		<variable item="F4 controls output 5" CV="38" mask="XXXVXXXX" minOut="5">
+			<xi:include href="http://jmri.org/xml/decoders/parts/enum-NoYes.xml"/>
+			<label>F4 controls output 5</label>
+		</variable>
+		<variable item="F4 controls output 6" CV="38" mask="XXVXXXXX" minOut="6">
+			<xi:include href="http://jmri.org/xml/decoders/parts/enum-NoYes.xml"/>
+			<label>F4 controls output 6</label>
+		</variable>
+		
+		<variable item="F5 controls output 1" CV="39" mask="XXXXXXXV" minOut="1">
+			<xi:include href="http://jmri.org/xml/decoders/parts/enum-NoYes.xml"/>
+			<label>F5 controls output 1</label>
+		</variable>
+		<variable item="F5 controls output 2" CV="39" mask="XXXXXXVX" minOut="2">
+			<xi:include href="http://jmri.org/xml/decoders/parts/enum-NoYes.xml"/>
+			<label>F5 controls output 2</label>
+		</variable>
+		<variable item="F5 controls output 3" CV="39" mask="XXXXXVXX" minOut="3">
+			<xi:include href="http://jmri.org/xml/decoders/parts/enum-NoYes.xml"/>
+			<label>F5 controls output 3</label>
+		</variable>
+		<variable item="F5 controls output 4" CV="39" mask="XXXXVXXX" minOut="4">
+			<xi:include href="http://jmri.org/xml/decoders/parts/enum-NoYes.xml"/>
+			<label>F5 controls output 4</label>
+		</variable>
+		<variable item="F5 controls output 5" CV="39" mask="XXXVXXXX" minOut="5">
+			<xi:include href="http://jmri.org/xml/decoders/parts/enum-NoYes.xml"/>
+			<label>F5 controls output 5</label>
+		</variable>
+		<variable item="F5 controls output 6" CV="39" mask="XXVXXXXX" minOut="6">
+			<xi:include href="http://jmri.org/xml/decoders/parts/enum-NoYes.xml"/>
+			<label>F5 controls output 6</label>
+		</variable>
+		
+		<variable item="F6 controls output 1" CV="40" mask="XXXXXXXV" minOut="1">
+			<xi:include href="http://jmri.org/xml/decoders/parts/enum-NoYes.xml"/>
+			<label>F6 controls output 1</label>
+		</variable>
+		<variable item="F6 controls output 2" CV="40" mask="XXXXXXVX" minOut="2">
+			<xi:include href="http://jmri.org/xml/decoders/parts/enum-NoYes.xml"/>
+			<label>F6 controls output 2</label>
+		</variable>
+		<variable item="F6 controls output 3" CV="40" mask="XXXXXVXX" minOut="3">
+			<xi:include href="http://jmri.org/xml/decoders/parts/enum-NoYes.xml"/>
+			<label>F6 controls output 3</label>
+		</variable>
+		<variable item="F6 controls output 4" CV="40" mask="XXXXVXXX" minOut="4">
+			<xi:include href="http://jmri.org/xml/decoders/parts/enum-NoYes.xml"/>
+			<label>F6 controls output 4</label>
+		</variable>
+		<variable item="F6 controls output 5" CV="40" mask="XXXVXXXX" minOut="5">
+			<xi:include href="http://jmri.org/xml/decoders/parts/enum-NoYes.xml"/>
+			<label>F6 controls output 5</label>
+		</variable>
+		<variable item="F6 controls output 6" CV="40" mask="XXVXXXXX" minOut="6">
+			<xi:include href="http://jmri.org/xml/decoders/parts/enum-NoYes.xml"/>
+			<label>F6 controls output 6</label>
+		</variable>
+		
+		<variable CV="51" item="Channel 1 brightness" default="10">
+		<decVal min="1" max="32"/>
+		</variable>
+		<variable CV="52" item="Channel 2 brightness" default="10">
+		<decVal min="1" max="32"/>
+		</variable>
+		<variable CV="53" item="Channel 3 brightness" default="10">
+		<decVal min="1" max="32"/>
+		</variable>
+		<variable CV="54" item="Channel 4 brightness" default="10">
+		<decVal min="1" max="32"/>
+		</variable>
+		<variable CV="55" item="Channel 5 brightness" default="10">
+		<decVal min="1" max="32"/>
+		</variable>
+		<variable CV="56" item="Channel 6 brightness" default="10">
+		<decVal min="1" max="32"/>
+		</variable>
+    </variables>
+    <resets>
+      <factReset label="Reset All CVs" CV="8" default="8">
+        <label>Reset All CVs</label>
+      </factReset>
+    </resets>
+  </decoder>
+  <pane>
+	<name>Brightness levels</name>
+	<column>
+		<row>
+			<display item="Channel 1 brightness" layout="above" label=""/>
+			<label>
+			  <text> </text>
+			</label>
+			<display item="Channel 1 brightness" layout="above" format="hslider-percent"/>
+		</row>
+		<row><label><text> </text></label></row>
+		<row>
+			<display item="Channel 2 brightness" layout="above" label=""/>
+			<label>
+			  <text> </text>
+			</label>
+			<display item="Channel 2 brightness" layout="above" format="hslider-percent"/>
+		</row>
+		<row><label><text> </text></label></row>
+		<row>
+			<display item="Channel 3 brightness" layout="above" label=""/>
+			<label>
+			  <text> </text>
+			</label>
+			<display item="Channel 3 brightness" layout="above" format="hslider-percent"/>
+		</row>
+		<row><label><text> </text></label></row>
+		<row>
+			<display item="Channel 4 brightness" layout="above" label=""/>
+			<label>
+			  <text> </text>
+			</label>
+			<display item="Channel 4 brightness" layout="above" format="hslider-percent"/>
+		</row>
+		<row><label><text> </text></label></row>
+		<row>
+			<display item="Channel 5 brightness" layout="above" label=""/>
+			<label>
+			  <text> </text>
+			</label>
+			<display item="Channel 5 brightness" layout="above" format="hslider-percent"/>
+		</row>
+		<row><label><text> </text></label></row>
+		<row>
+			<display item="Channel 6 brightness" layout="above" label=""/>
+			<label>
+			  <text> </text>
+			</label>
+			<display item="Channel 6 brightness" layout="above" format="hslider-percent"/>
+		</row>
+	</column>
+  </pane>
+</decoder-config>
